@@ -1,0 +1,36 @@
+﻿@model TMS.Models.LoginPage
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Login</legend>
+        <div class="login">
+            @Html.LabelFor(Model => Model.UserName)
+        </div>
+        <div class="login">
+            @Html.EditorFor(Model => Model.UserName)
+            @Html.ValidationMessageFor(Model => Model.UserName)
+        </div>
+        <div class="login">
+            @Html.LabelFor(Model => Model.Password)
+        </div>
+        <div class="login">
+            @Html.EditorFor(Model => Model.Password)
+            @Html.ValidationMessageFor(Model => Model.Password)
+        </div>
+        <p>
+            <input type="submit" value=" Login">
+        </p>
+    </fieldset>
+
+
+}
+

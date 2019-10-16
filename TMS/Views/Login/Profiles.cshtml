@@ -1,0 +1,69 @@
+﻿@model TMS.Models.LoginPage
+@{
+    ViewBag.Title = "Profiles";
+}
+
+<h2> Update Profiles</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Profile</legend>
+        <div class="Profile">
+            @Html.LabelFor(Model => Model.FullName)
+        </div>
+        <div class="Profile">
+            @Html.EditorFor(Model => Model.FullName)
+            @Html.ValidationMessageFor(Model => Model.FullName)
+        </div>
+        <div class="Profile">
+            @Html.LabelFor(Model => Model.Title)
+        </div>
+        <div class="Profile">
+            @Html.EditorFor(Model => Model.Title)
+            @Html.ValidationMessageFor(Model => Model.Title)
+        </div>
+        <div class="Profile">
+            @Html.LabelFor(Model => Model.Department)
+        </div>
+        <div class="Profile">
+            @Html.EditorFor(Model => Model.Department)
+            @Html.ValidationMessageFor(Model => Model.Department)
+        </div>
+        <div class="Profile">
+            @Html.LabelFor(Model => Model.ManagerId)
+        </div>
+        <div class="Profile">
+            @Html.EditorFor(Model => Model.ManagerId)
+            @Html.ValidationMessageFor(Model => Model.ManagerId)
+        </div>
+
+        <div class="Profile">
+            @Html.LabelFor(Model => Model.Date_Of_Joining)
+        </div>
+        <div class="Profile">
+            @Html.EditorFor(Model => Model.Date_Of_Joining)
+            @Html.ValidationMessageFor(Model => Model.Date_Of_Joining)
+        </div>
+
+
+        <div class="Profile">
+            <br>
+            @Html.LabelFor(model => model.ImagePath)
+            <div class="col-md-10">
+                <input type="file" name="uploadFile" required />
+                <br>
+                @Html.TextBox("file", "", new { type = "file" }) <br />
+            </div>
+        </div>
+        <p>
+            <br />
+
+            <input type="submit" value=" submit">
+        </p>
+    </fieldset>
+
+
+}

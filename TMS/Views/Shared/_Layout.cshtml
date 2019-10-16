@@ -9,55 +9,58 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-    body {font-family: "Lato", sans-serif;}
+        body {
+            font-family: "Lato", sans-serif;
+        }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 19px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 19px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
-.main12 {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
 
-.sidenavmenu{
-    color:black;
-}
-  </style>
+        .main12 {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        .sidenavmenu {
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -70,23 +73,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="images/logo2.png" class="navbar-brand" style="height:70px;width:80px;margin-left:-80%;background-color:#F8F8F8;" />
+                <img src="~/Scripts/UserImages/logo2.png" class="navbar-brand" style="height:70px;width:80px;margin-left:-80%;background-color:#F8F8F8;" />
                 <span style="font-size:30px;cursor:pointer;margin-top:15px;" onclick="openNav()" class="navbar-brand">&#9776;</span>
-                
+
 
             </div>
-           
+
         </div>
     </div>
-    <div id="mySidenav" class="sidenav" style="margin-top:5%;background-color:#00AFB8;" >
+    <div id="mySidenav" class="sidenav" style="margin-top:5%;background-color:#00AFB8;">
         <a href="javascript:void(0)" class="closebtn sidenavmenu" onclick="closeNav()"><label class="sidenavmenu">&times;</label></a>
         <a href="#home"><i class="fa fa-fw fa-home sidenavmenu"></i><label class="sidenavmenu"> Dashboard</label></a>
-        <a href="#services"><i class="fa fa-drivers-license-o sidenavmenu"></i><label class="sidenavmenu"> &nbsp;Profile</label></a>
-        <a href="#clients"><i class="fa fa-fw fa-user sidenavmenu"></i><label class="sidenavmenu"> Mycourses</label></a>
-        <a href="#contact"><i class="fa fa-fw fa-sign-out sidenavmenu"></i><label class="sidenavmenu"> Logout</label></a>
+
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label> <i class="fa fa-drivers-license-o sidenavmenu"></i> &nbsp;  @Html.ActionLink("Profile ", "Profiles", "Login",new {  @style="text-transform:capitalize;color:black;" })</label><br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label ><span> <i class="fa fa-fw fa-user sidenavmenu" ></i></span> @Html.ActionLink("📞My Courses ", "Profile", "Login",new {  @style="text-transform:capitalize;color:black;" })</label><br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label  style="margin-bottom:1%"><i class="fa fa-fw fa-sign-out sidenavmenu"></i> @Html.ActionLink("Logout ", "Logout", "Login",new {  @style="text-transform:capitalize;color:black;" })</label><br />
     </div>
     <div class="container body-content" id="main" style="margin-top:5%;">
-        
+
         @RenderBody()
         <hr />
         <footer>
@@ -107,5 +111,5 @@
     function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft= "100px";
-} 
+}
 </script>
