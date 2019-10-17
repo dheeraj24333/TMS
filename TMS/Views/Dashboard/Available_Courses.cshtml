@@ -1,0 +1,81 @@
+﻿@model IEnumerable<TMS.Models.course_registration_view_model>
+
+@{
+    ViewBag.Title = "Available_Courses";
+}
+
+
+
+<h2>Available Courses</h2>
+
+
+
+<table class="table">
+    @*<tr>
+            <th>
+                @Html.DisplayNameFor(model => model.course_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course_category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.course_duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.class_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.class_start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.class_end_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.available_seats)
+            </th>
+            <th></th>
+        </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.course_duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.class_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.class_start_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.class_end_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.available_seats)
+            </td>
+            <td>
+                @Html.ActionLink("Register Now", "Register", new { id = item.class_id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -85,45 +85,19 @@ namespace TMS.Controllers
                 return RedirectToAction("Index");
             else
                 return RedirectToAction("error");
-            /*      string FileName = Path.GetFileNameWithoutExtension(profile.ImageFile.FileName);
+            
+            
+        }
 
-                  //To Get File Extension  
-                  string FileExtension = Path.GetExtension(profile.ImageFile.FileName);
+        public ActionResult routetodash()
+        {
+            return RedirectToAction("Index", "Dashboard");
+        }
 
-                  //Add Current Date To Attached File Name  
-                  FileName = DateTime.Now.ToString("yyyyMMdd") + "-" + FileName.Trim() + FileExtension;
-
-                  //Get Upload path from Web.Config file AppSettings.  
-                  string UploadPath = ConfigurationManager.AppSettings["UserImagePath"].ToString();
-
-                  //Its Create complete path to store in server.  
-                  profile.ImagePath = UploadPath + FileName;
-
-                  //To copy and save file into server.  
-                  profile.ImageFile.SaveAs(profile.ImagePath);
-
-                  //profile.ImageFile=
-                  int Session_id = 0;
-                      if (Session["user_id"] != null)
-                      {
-                          Session_id = Convert.ToInt32(Session["user_id"].ToString());
-
-                      }
-                      training_management_systemEntities entities = new training_management_systemEntities();
-                      company_employee emp = entities.company_employee.FirstOrDefault(e => e.user_id == Session_id);
-
-                      emp.Photograph = profile.ImagePath;
-                      entities.SaveChanges();
-                  }
-
-              else
-              {
-                  return RedirectToAction("error");
-              }*/
-
-
-        
-            return View();
+        public ActionResult reg()
+        {
+            ViewBag.Message = "Your registration is sent for comformation...";
+            return View("Dashboard");
         }
 
         public ActionResult Dashboard()
@@ -148,7 +122,7 @@ namespace TMS.Controllers
 
                 return RedirectToAction("Index");
             }
-            return View();
+            
         }
 
     }

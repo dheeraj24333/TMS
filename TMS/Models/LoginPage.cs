@@ -38,11 +38,13 @@ namespace TMS.Models
         [Required]
         public DateTime Date_Of_Joining { get; set; }
 
+        [Required]
+        public DateTime Date_Of_Joining1 { get; set; }
 
 
 
 
-       
+
         Boolean flag1,flag;
         public Boolean Login()
         {
