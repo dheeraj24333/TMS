@@ -82,22 +82,29 @@
         </div>
     </div>
     <div id="mySidenav" class="sidenav" style="margin-top:5%;background-color:#00AFB8;">
-        <a href="javascript:void(0)" class="closebtn sidenavmenu" onclick="closeNav()"><label class="sidenavmenu">&times;</label></a>
-        <a href="#home"><i class="fa fa-fw fa-home sidenavmenu"></i><label class="sidenavmenu"> Dashboard</label></a>
-
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label> <i class="fa fa-drivers-license-o sidenavmenu"></i> &nbsp;  @Html.ActionLink("Available Cources ", "routetodash", "Login", new { @style = "text-transform:capitalize;color:black;" })</label><br />
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label> <i class="fa fa-drivers-license-o sidenavmenu"></i> &nbsp;  @Html.ActionLink("Profile ", "Profiles", "Login", new { @style = "text-transform:capitalize;color:black;" })</label><br />
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label><span> <i class="fa fa-fw fa-user sidenavmenu"></i></span> @Html.ActionLink("📞My Courses ", "Profile", "Login", new { @style = "text-transform:capitalize;color:black;" })</label><br />
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<label style="margin-bottom:1%"><i class="fa fa-fw fa-sign-out sidenavmenu"></i> @Html.ActionLink("Logout ", "Logout", "Login", new { @style = "text-transform:capitalize;color:black;" })</label><br />
+        <a href="javascript:void(0)" class="closebtn sidenavmenu" onclick="closeNav()" style="margin-bottom:10%;"><label class="sidenavmenu" >&times;</label></a>
+        
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<i class="fa fa-dashboard sidenavmenu" style="margin-top: 13%; font-size:24px;"></i> &nbsp;  @Html.ActionLink("Dashboard ", "Dashboard", "Login", new { @style = "text-transform:capitalize;color:black;margin-left: 17%;margin-top: -32px;" })<br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<i class="fa fa-clone sidenavmenu" style="font-size:24px;"></i> &nbsp;  @Html.ActionLink("Available Cources ", "routetodash", "Login", new { @style = "text-transform:capitalize;color:black;margin-left: 17%;margin-top: -32px;" })<br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<i class="fa fa-drivers-license-o sidenavmenu" style="font-size:24px;"></i> &nbsp;  @Html.ActionLink("Profile ", "Profiles", "Login", new { @style = "text-transform:capitalize;color:black;margin-left: 17%;margin-top: -32px;" })<br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;<span> <i class="fa fa-fw fa-user sidenavmenu" style="font-size:24px;"></i></span> @Html.ActionLink("My Courses ", "Profile", "Login", new { @style = "text-transform:capitalize;color:black;margin-left: 17%;margin-top: -32px;" })<br />
+        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<i class="fa fa-fw fa-sign-out sidenavmenu" style="font-size:24px;"></i> @Html.ActionLink("Logout ", "Logout", "Login", new { @style = "text-transform:capitalize;color:black;margin-left: 17%;margin-top: -32px;" })<br />
     </div>
     <div class="container body-content" id="main" style="margin-top:5%;">
 
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - CommunityBrands</p>
-        </footer>
+        <div class="row">
+            <div class="col-md-12">
+                <div style="margin-top:14%;">
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - CommunityBrands</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
     </div>
+    
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
