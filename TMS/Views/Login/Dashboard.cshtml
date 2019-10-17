@@ -3,5 +3,13 @@
     ViewBag.Title = "Dashboard";
 }
 
-<h2>Dashboard</h2>
+<img src="~/Scripts/UserImages/communitybrands_logo.png" style="width : 100%" />
 
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+            };
+    </script>
+}
