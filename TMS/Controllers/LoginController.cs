@@ -171,7 +171,7 @@ namespace TMS.Controllers
 
                 return RedirectToAction("Index");
             }
-            return View();
+
         }
 
     }
