@@ -1,6 +1,37 @@
 ﻿@model TMS.Models.LoginPage
 @{
     ViewBag.Title = "Profiles";
+
+
+    training_management_systemEntities entities = new training_management_systemEntities();
+
+    List<manager> items = entities.managers.ToList();
+    var name = " ";
+    var id = 0;
+
+    var lst = new List<SelectListItem>();
+
+    foreach (var i in items)
+    {
+
+        id = i.manager_id;
+        name = i.manager_name;
+
+
+        lst.Add(new SelectListItem { Text = name, Value = id.ToString() });
+
+
+    }
+    ViewBag.data = lst;
+
+
+
+
+
+
+
+
+
 }
 
 <h2> Update Profiles</h2>
@@ -17,51 +48,53 @@
         <div class="Profile">
             @Html.EditorFor(Model => Model.FullName)
             @Html.ValidationMessageFor(Model => Model.FullName)
+            <br />
         </div>
+        <br>
         <div class="Profile">
             @Html.LabelFor(Model => Model.Title)
         </div>
         <div class="Profile">
-            @Html.EditorFor(Model => Model.Title)
-            @Html.ValidationMessageFor(Model => Model.Title)
+
+            @Html.DropDownListFor(model => model.Title, new List<SelectListItem>
+           { new SelectListItem{Text="Mr.", Value="Mr.",Selected =true },
+             new SelectListItem{Text="Ms", Value="Ms"}}, new { htmlAttributes = new { @class = "form-control" } })
         </div>
+        <br>
         <div class="Profile">
             @Html.LabelFor(Model => Model.Department)
         </div>
         <div class="Profile">
-            @Html.EditorFor(Model => Model.Department)
-            @Html.ValidationMessageFor(Model => Model.Department)
-        </div>
-        <div class="Profile">
-            @Html.LabelFor(Model => Model.ManagerId)
-        </div>
-        <div class="Profile">
-            @Html.EditorFor(Model => Model.ManagerId)
-            @Html.ValidationMessageFor(Model => Model.ManagerId)
-        </div>
 
-        <div class="Profile">
-            @Html.LabelFor(Model => Model.Date_Of_Joining)
+            @Html.DropDownListFor(model => model.Department, new List<SelectListItem>
+           { new SelectListItem{Text="R&D", Value="R&D",Selected =true },
+           new SelectListItem{Text="HR", Value="HR" },
+             new SelectListItem{Text="Client Services", Value="Client Services"}})
         </div>
-        <div class="Profile">
-            @Html.EditorFor(Model => Model.Date_Of_Joining)
-            @Html.ValidationMessageFor(Model => Model.Date_Of_Joining)
-        </div>
+        <br>
 
 
+
+
+        <div class="Profile">
+            @Html.LabelFor(model => model.Date_Of_Joining)<br><br>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Date_Of_Joining, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Date_Of_Joining, "", new { @class = "text-danger" })
+            <br>
+        </div>
+        <br><br>
         <div class="Profile">
             <br>
-            @Html.LabelFor(model => model.ImagePath)
-            <div class="col-md-10">
-                <input type="file" name="uploadFile" required />
-                <br>
-                @Html.TextBox("file", "", new { type = "file" }) <br />
-            </div>
+            @Html.LabelFor(model => model.ManagerId)<br><br>
         </div>
+        @Html.DropDownList("ManagerId", ViewBag.data as List<SelectListItem>)
+
         <p>
             <br />
 
-            <input type="submit" value=" submit">
+            <input type="submit" value=" Save">
         </p>
     </fieldset>
 
