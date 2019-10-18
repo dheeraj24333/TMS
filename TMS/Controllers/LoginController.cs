@@ -139,7 +139,16 @@ namespace TMS.Controllers
 
             return View();
         }
+        public ActionResult routetodash()
+        {
+            return RedirectToAction("Index", "Dashboard");
+        }
 
+        public ActionResult reg()
+        {
+            ViewBag.Message = "Your registration is sent for comformation...";
+            return View("Dashboard");
+        }
         public ActionResult Dashboard()
         {
             if (Session["user_id"] == null)
