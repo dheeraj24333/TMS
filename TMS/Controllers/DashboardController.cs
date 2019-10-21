@@ -64,7 +64,12 @@ namespace TMS.Controllers
 
             return View();
         }
-
+        public ActionResult Dashboard()
+        {
+            
+                return RedirectToAction("Dashboard","Login");
+            
+        }
         public ActionResult Register(int id)
         {
             if (Session["user_id"] != null)
