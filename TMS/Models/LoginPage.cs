@@ -66,6 +66,7 @@ namespace TMS.Models
             if (emp != null)
             {
                 HttpContext.Current.Session["user_id"] = emp.user_id;
+                HttpContext.Current.Session["username"] = emp.username;
                 if (emp.password == "12345")
                 {
                     results[1] = 0;

@@ -3,7 +3,25 @@
 @{
     ViewBag.Title = "Available_Courses";
 }
+<head>
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 90%;
+        }
 
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+</head>
+
+<div class="card">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -18,35 +36,35 @@
 
                 <table class="table table-responsive">
                     @*<tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.course_id)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.course_name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.course_type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.course_category)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.course_duration)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.class_name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.class_start_date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.class_end_date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.available_seats)
-                </th>
-                <th></th>
-            </tr>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.course_id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.course_name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.course_type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.course_category)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.course_duration)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.class_name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.class_start_date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.class_end_date)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.available_seats)
+                            </th>
+                            <th></th>
+                        </tr>*@
                     <thead>
                         <tr>
                             <th>Sr No.</th>
@@ -102,6 +120,7 @@
             </div>
         </div>
 
+    </div>
     </div>
 
 

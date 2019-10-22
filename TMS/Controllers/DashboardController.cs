@@ -70,6 +70,11 @@ namespace TMS.Controllers
                 return RedirectToAction("Dashboard","Login");
             
         }
+        public ActionResult routetodash()
+        {
+            return RedirectToAction("Index", "Dashboard");
+        }
+
         public ActionResult Register(int id)
         {
             if (Session["user_id"] != null)
