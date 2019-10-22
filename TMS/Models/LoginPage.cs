@@ -55,10 +55,9 @@ namespace TMS.Models
 
 
         Boolean flag1, flag;
-        public Boolean Login()
+        public int[] Login()
         {
-            int[] results = new int[2];
-            results[0] = 1;
+            int[] results = { 0, 1, 1 };
             flag = false;
             training_management_systemEntities entities = new training_management_systemEntities();
             company_employee emp = entities.company_employee.SingleOrDefault(e => e.username == UserName & e.password == Password);
@@ -68,16 +67,20 @@ namespace TMS.Models
             {
                 HttpContext.Current.Session["user_id"] = emp.user_id;
                 if (emp.password == "12345")
-                    //results[1] = 0;
-                    flag = true;/*
+                {
+                    results[1] = 0;
+                    flag = true;
+                }
                 else
-                    results[1] = 1;*/
+                    results[1] = 1;
 
             }
             else
+            {
                 flag = false;
-
-            return flag;
+                results[2] = 2;
+            }
+            return results;
         }
 
 
