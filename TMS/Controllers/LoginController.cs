@@ -110,7 +110,7 @@ namespace TMS.Controllers
 
         public ActionResult reg()
         {
-            ViewBag.Message = "Your registration is sent for comformation...";
+            ViewBag.Message = "You have registered for this course successfully...";
             return View("Dashboard");
         }
         public ActionResult Dashboard()
